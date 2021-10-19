@@ -1,7 +1,7 @@
 # Demography 
 # Attaching data
 dem<-read.csv2("Demography_Raters.csv", header=T)
-head(dem)
+head(dem) 
 
 ### New functions
 skewness1<-function(x){(sum((x-mean(x))^3)/length(x))/(sum((x-mean(x))^2)/(length(x)-1))^(3/2)}
@@ -78,11 +78,11 @@ plot(CMR13Mboot)
 # And in more useful order (see that it clearly reflects coeffficients of CMR13M_network, however, not of the CMR13MG)
 plot(CMR13Mboot, labels = TRUE, order="sample")
 
-# ALE - když qgraphu øeknu, že chci "glasso", tak to udìlá stejnì jako bootnet. 
+# ALE - kdyÅ¾ qgraphu Ã¸eknu, Å¾e chci "glasso", tak to udÃ¬lÃ¡ stejnÃ¬ jako bootnet.  # Write it in English please
 CMR13MG2 <- qgraph(CMR13.M.cor, graph="glasso", tuning= 0.5, sampleSize=49, layout = "spring", label.cex=1.8, labels=colnames(CMR.13.M), label.scale=F, edge.labels=T,
                   sampleSize=49, edge.label.cex=1, repulsion=0.8, maximum = 0.5, minimum=0.0, esize=12, vsize=8, details=F, cut=0.1)
 
-# a když mu øeknu, že EBIC parametr má být 0.0, udìlá ještì tøetí typ grafu (tzn. EBIC = 0 není argument k dosažení prosté korelaèní sítì):
+# a kdyÅ¾ mu Ã¸eknu, Å¾e EBIC parametr mÃ¡ bÃ½t 0.0, udÃ¬lÃ¡ jeÅ¡tÃ¬ tÃ¸etÃ­ typ grafu (tzn. EBIC = 0 nenÃ­ argument k dosaÅ¾enÃ­ prostÃ© korelaÃ¨nÃ­ sÃ­tÃ¬):
 CMR13MG3 <- qgraph(CMR13.M.cor, graph="glasso", tuning= 0.0,layout = "spring", label.cex=1.8, labels=colnames(CMR.13.M), label.scale=F, edge.labels=T,
                    sampleSize=49, edge.label.cex=1, repulsion=0.8, maximum = 0.5,minimum=0.01, esize=12, vsize=8, details=F)
 
@@ -91,11 +91,11 @@ CMR13MG3 <- qgraph(CMR13.M.cor, graph="pcor",layout = "spring", label.cex=1.8, l
 
 # 2 Bootnet s default="cor"
 CMR13M_Network <- estimateNetwork(CMR.13.M, default = "cor")
-CMR13M_Network$graph # Which shows the coefficients - a jsou stejné jako ve výchozí korelaèní tabulce
+CMR13M_Network$graph # Which shows the coefficients - a jsou stejnÃ© jako ve vÃ½chozÃ­ korelaÃ¨nÃ­ tabulce
 # to draw a graph:
-plot(CMR13M_Network, edge.labels=T) # Which creates appropriate edges - sice jinak otoèený, ale zase "správnì"
+plot(CMR13M_Network, edge.labels=T) # Which creates appropriate edges - sice jinak otoÃ¨enÃ½, ale zase "sprÃ¡vnÃ¬"
 
-# Ploty dle obou metod (bootnet a qgraph) jsou ÚPLNÌ STEJNÉ!
+# Ploty dle obou metod (bootnet a qgraph) jsou ÃšPLNÃŒ STEJNÃ‰!
 centralityPlot(CMR13M_Network)
 centralityPlot(CMR13MG)
 
