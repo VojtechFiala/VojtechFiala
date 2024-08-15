@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @VojtechFiala
+- 👋 Hi, I’m @VojtechFiala I am here just to get Copilot for R Studio. I don't like me very much. Please, go away. 
 - 👀 I’m interested in evolutionary psychology
 - 🌱 I’m currently learning to handle bayesian analyes using package rethinking by Richard McElreath
 - 💞️ I’m currently not looking to collaborate on any specific project 
